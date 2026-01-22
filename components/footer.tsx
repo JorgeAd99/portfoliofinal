@@ -4,45 +4,28 @@ import { Button } from "@/components/ui/button"
 
 export function Footer() {
   return (
-    <footer className="border-t py-6 md:py-0">
-      <div className="container flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row">
-        <p className="text-center text-sm leading-loose text-muted-foreground md:text-left">
-          © {new Date().getFullYear()} Matias Marzorati. All rights reserved.
+    <footer className="py-8 border-t backdrop-blur-lg border-white/10 bg-black/20">
+      <div className="container flex flex-col gap-6 justify-between items-center md:flex-row">
+        <p className="text-sm text-center text-muted-foreground md:text-left">
+          © {new Date().getFullYear()} JadoDev. All rights reserved.
         </p>
-        <div className="flex items-center gap-4">
-          <LinkPreview url="https://github.com/matiasmarzorati" width={200} height={150}>
-            <Button variant="ghost" size="icon" className="text-[#09b479] hover:bg-[#09b479]/10">
-              <Github className="h-5 w-5" />
-              <span className="sr-only">GitHub</span>
-            </Button>
-          </LinkPreview>
-          <LinkPreview
-            url="https://www.linkedin.com/in/matiasmarzorati/"
-            width={200}
-            height={150}
-            isStatic={true}
-            imageSrc="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-9ewR5w377pRa7eYmjaV3MqyQ12vvVf.png"
-          >
-            <Button variant="ghost" size="icon" className="text-[#09b479] hover:bg-[#09b479]/10">
-              <Linkedin className="h-5 w-5" />
-              <span className="sr-only">LinkedIn</span>
-            </Button>
-          </LinkPreview>
-          <LinkPreview url="https://twitter.com/matiasmarzorati" width={200} height={150}>
-            <Button variant="ghost" size="icon" className="text-[#09b479] hover:bg-[#09b479]/10">
-              <Twitter className="h-5 w-5" />
-              <span className="sr-only">Twitter</span>
-            </Button>
-          </LinkPreview>
-          <Button variant="ghost" size="icon" className="text-[#09b479] hover:bg-[#09b479]/10" asChild>
-            <a href="mailto:contact@matiasmarzorati.com">
-              <Mail className="h-5 w-5" />
-              <span className="sr-only">Email</span>
-            </a>
-          </Button>
+
+        <div className="flex gap-4 items-center">
+          {[
+            { icon: Github, href: "https://github.com/jadodev", label: "GitHub" },
+            { icon: Linkedin, href: "https://www.linkedin.com/in/jorge-enrique-adorno-296151210/", label: "LinkedIn" },
+            { icon: Twitter, href: "https://twitter.com/jadodev", label: "Twitter" },
+            { icon: Mail, href: "mailto:jorgeenriqueadorno@gmail.com", label: "Email" },
+          ].map((social, idx) => (
+             <LinkPreview key={idx} url={social.href} className="transition-colors text-muted-foreground hover:text-primary">
+                <Button variant="ghost" size="icon" className="rounded-full transition-all text-muted-foreground hover:text-primary hover:bg-primary/10">
+                    <social.icon className="w-5 h-5" />
+                    <span className="sr-only">{social.label}</span>
+                </Button>
+            </LinkPreview>
+          ))}
         </div>
       </div>
     </footer>
   )
 }
-

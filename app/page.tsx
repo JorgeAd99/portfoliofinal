@@ -1,4 +1,4 @@
-import { Navbar } from "@/components/navbar"
+import { DockNav } from "@/components/dock-nav"
 import { Hero } from "@/components/hero"
 import { Experience } from "@/components/experience"
 import { MyStack } from "@/components/my-stack"
@@ -9,7 +9,7 @@ import { Footer } from "@/components/footer"
 export default function Home() {
   return (
     <div className="min-h-screen bg-background">
-      <Navbar />
+      <DockNav />
       <main>
         <Hero />
         <Experience />

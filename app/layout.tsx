@@ -9,7 +9,7 @@ import { Toaster } from 'sonner'
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Matias Marzorati | Portfolio",
+  title: "Jorge Adorno | Portfolio",
   description: "Personal portfolio showcasing my work and skills",
 }
 
